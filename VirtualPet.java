@@ -9,8 +9,8 @@ public class VirtualPet {
 	}
 	public VirtualPet(String name, int hunger, int happiness) {
 		pet = name; 
-		hunger = hunger; 
-		happiness = happiness;
+		this.hunger = hunger; 
+		this.happiness = happiness;
 	}
 	public String getName() {
 		return pet;
