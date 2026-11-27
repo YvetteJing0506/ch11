@@ -22,23 +22,15 @@ public class VirtualPet {
 		return happiness;
 	}
 	public void feed() {
-		if (hunger>2) {
-			hunger-=3;
-		} hunger=0;
+		hunger = Math.max(0, hunger-3);
 	}
 	public void play() {
-		if (happiness<9) {
-			happiness+=2;
-		} happiness=10;
-		if (hunger<10) {
-			hunger++;
-		} hunger=10;
+		happiness = Math.min(10, happiness+2);
+		hunger = Math.min(10, hunger+1);
 	}
 	public boolean isHappy() {
-		if (happiness>=7 && hunger<=4) {
-			return true;
-		} return false;
-	} 
+		return happiness>=7 && hunger<=4;
+	}
 	public String toString() {
 		return pet + " (hunger " + hunger + ", happiness " + happiness + ")";
 	}
