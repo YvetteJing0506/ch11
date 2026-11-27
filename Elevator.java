@@ -1,26 +1,31 @@
 public class Elevator {
 	
-	private int currentFloor, floorsTravelled;
+	private int now, topFloor, travelled;
 	
 	public Elevator(int topFloor) {
-		floor = 1;
+		now = 1;
 		topFloor = topFloor;
+		travelled = 0;
 	}
 	
 	public int getCurrentFloor() {
-		return floor;
+		return now;
 	}
 	
 	public int getFloorsTravelled() {
-		return floorsTravelled;
+		return travelled;
 	}
 	
 	public boolean goTo(int floor) {
-		
+		if (floor>=1 && floor<=topFloor && floor!=now) {
+			travelled += Math.abs(now-floor);
+			now = floor; 
+			return true;
+		} return false;
 	}
 	
 	public String toString() {
-		System.out.println("Floor " + floor + " of " + topFloor);
+		return "Floor " + now + " of " + topFloor;
 	}
 	
 }
