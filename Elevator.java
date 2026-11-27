@@ -4,7 +4,7 @@ public class Elevator {
 	
 	public Elevator(int topFloor) {
 		now = 1;
-		topFloor = topFloor;
+		this.topFloor = topFloor;
 		travelled = 0;
 	}
 	
